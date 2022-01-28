@@ -308,7 +308,7 @@ float AGrenadeProjectCharacter::TakeDamage(float DamageAmount, FDamageEvent cons
 	if (health <= 0)
 	{
 		FTimerHandle handle;
-		GetWorld()->GetTimerManager().SetTimer(handle, [&](){}, 5, false);
+		GetWorld()->GetTimerManager().SetTimer(handle, [&](){}, 5, false);//@MAT timer needs funtion name here too
 		UGameplayStatics::OpenLevel(this,FName(*GetWorld()->GetName()), false);
 	}
 	UE_LOG(LogTemp, Warning, TEXT("Damage taken %f"), DamageAmount);

@@ -44,7 +44,7 @@ float ADummyCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Damage
 	{
 		GetMesh()->PlayAnimation(DeathAnimation, false);
 		FTimerHandle handle;
-		GetWorld()->GetTimerManager().SetTimer(handle, [&]() {}, 3, false);
+		GetWorld()->GetTimerManager().SetTimer(handle, [&]() {}, 3, false);//@MAT this is incomplete i supose(timer)
 		Destroy();
 	}
 	UE_LOG(LogTemp, Warning, TEXT("Damage taken %f"), DamageAmount);

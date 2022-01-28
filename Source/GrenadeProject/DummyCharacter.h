@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "DummyCharacter.generated.h"
 
+
+//@MAT as an oop approach,  this could have been parented to the grenade character// this can help prevent casting individually// and also will enable  to use the same Health UMG widget for both character and AI
 class UAnimSequence;
 UCLASS()
 class GRENADEPROJECT_API ADummyCharacter : public ACharacter
@@ -19,7 +21,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Dummy Info")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Dummy Info")//@MAT good on assigning categories here, same can be done in BPs too
 		float health;
 	UPROPERTY(EditAnywhere, Category = "Dummy Info")
 		UAnimSequence* DeathAnimation;
